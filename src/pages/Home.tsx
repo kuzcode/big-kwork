@@ -1,6 +1,11 @@
 import React from 'react';
 import './Home.css';
 import server from '../assets/server.png';
+import jsIcon from '../assets/js.png';
+import img1 from '../assets/img1.png';
+import img2 from '../assets/img2.png';
+import img3 from '../assets/img3.png';
+import img4 from '../assets/img4.png';
 
 interface Tarif {
   title: string;
@@ -193,18 +198,18 @@ const Home: React.FC = () => {
           </div>
           <div className="characteristic-header-right">
             <span className="characteristic-rating">5.0</span>
-            <img src="src\assets\js.png" alt="js" className="characteristic-js-icon" />
+            <img src={jsIcon} alt="js" className="characteristic-js-icon" />
           </div>
         </div>
         <div className="characteristic-gallery">
           <img src="https://avatars.mds.yandex.net/get-altay/9707320/2a0000018b1a239570a5bea1a63d1b89bae7/XXXL" alt="char1" />
           <img src="https://avatars.mds.yandex.net/i?id=8afa1ff2bc541d62440e8c95e86c2bdb_l-8231149-images-thumbs&n=13" alt="char2" />
-          <img src="src\assets\img1.png" alt="char3" />
+          <img src={img1} alt="char3" />
         </div>
         <div className="characteristic-gallery characteristic-gallery-bottom">
-          <img src="src\assets\img2.png" alt="char5" />
-          <img src="src\assets\img3.png" alt="char6" />
-          <img src="src\assets\img4.png" alt="char7" />
+          <img src={img2} alt="char5" />
+          <img src={img3} alt="char6" />
+          <img src={img4} alt="char7" />
         </div>
         <div className="characteristic-cluster-row">
           <span className="characteristic-cluster">CLUSTER</span>
