@@ -1,10 +1,20 @@
 import React from 'react';
 import './Home.css';
 import { linearGradient } from 'framer-motion/client';
-import server from '../assets/server.png'
+import server from '../assets/server.png';
 
-function Home() {
-  const tarifs = [
+interface Tarif {
+  title: string;
+  filled: string;
+  right: string;
+  bg: {
+    start: string;
+    end: string;
+  };
+}
+
+const Home: React.FC = () => {
+  const tarifs: Tarif[] = [
     {
       title: 'CPU Platinum Processor',
       filled: '1 Core',
@@ -61,9 +71,9 @@ function Home() {
     }
   ];
 
-  function linearGradient(color) {
+  const linearGradient = (color: { start: string; end: string }): string => {
     return `linear-gradient(to right, ${color.start}, ${color.end})`;
-  }
+  };
 
   return (
     <div className="home-container">
@@ -76,7 +86,6 @@ function Home() {
         <button>GET FREE 1 DAY</button>
       </div>
       <div className="main-content">
-
         <h1>Big <span>Perfect</span><br />Data & Domain.</h1>
         <section className="domain-section">
           <div className="domain-list">
@@ -102,8 +111,8 @@ function Home() {
       <h1 className='right'><span>Server</span></h1>
 
       <div className="panel">
-        {tarifs.map(t =>
-          <li>
+        {tarifs.map((t, index) => (
+          <li key={index}>
             <p>{t.title}</p>
             <div className="block">
               <div className="filled" style={{
@@ -114,7 +123,7 @@ function Home() {
               <p>{t.right}</p>
             </div>
           </li>
-        )}
+        ))}
       </div>
 
       <div className="container gradient-bg">
@@ -248,21 +257,20 @@ function Home() {
             <div className="footer-link">Club & .io Only</div>
           </div>
           <div className="footer-col">
-            <div className="footer-title">Hello</div>
-            <div className="footer-link">Customer</div>
-            <div className="footer-link">Support Portal</div>
-            <div className="footer-link">Usage Tutorials</div>
-            <div className="footer-link">Live Chat</div>
+            <div className="footer-title">Support</div>
+            <div className="footer-link">Contact Us</div>
+            <div className="footer-link">Knowledge Base</div>
+            <div className="footer-link">Network Status</div>
           </div>
         </div>
         <div className="footer-bottom-row">
-          <span className="footer-bottom-link">BIG DATA</span>
-          <span className="footer-bottom-link">WALLET</span>
-          <span className="footer-bottom-link">LICENSE</span>
+          <span className="footer-bottom-link">© 2024 Big Data. All rights reserved.</span>
+          <span className="footer-bottom-link">Privacy Policy</span>
+          <span className="footer-bottom-link">Terms of Service</span>
         </div>
       </footer>
     </div>
   );
-}
+};
 
 export default Home; 
