@@ -1,6 +1,5 @@
 import React from 'react';
 import './Home.css';
-import { linearGradient } from 'framer-motion/client';
 import server from '../assets/server.png';
 
 interface Tarif {
@@ -71,10 +70,6 @@ const Home: React.FC = () => {
     }
   ];
 
-  const linearGradient = (color: { start: string; end: string }): string => {
-    return `linear-gradient(to right, ${color.start}, ${color.end})`;
-  };
-
   return (
     <div className="home-container">
       <div className="menu">
@@ -116,7 +111,7 @@ const Home: React.FC = () => {
             <p>{t.title}</p>
             <div className="block">
               <div className="filled" style={{
-                background: linearGradient(t.bg)
+                background: `linear-gradient(to right, ${t.bg.start}, ${t.bg.end})`
               }}>
                 <p>{t.filled}</p>
               </div>
